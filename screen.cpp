@@ -77,5 +77,9 @@ void Screen::keyPressEvent(QKeyEvent* kEvent)
 	{
 		close();
 	}
+	else if (kEvent->key() == Qt::Key_C && kEvent->modifiers() == Qt::ControlModifier)
+	{
+		QGuiApplication::clipboard()->setPixmap(fullScreen.copy(QRect(beginPos,endPos)));
 
+	}
 }
